@@ -1,0 +1,7 @@
+.checkoutContainer{
+    background-image: url('https://wallpaper.dog/large/5513740.jpg');
+    width: 100%;  
+    min-height: 100vh;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}

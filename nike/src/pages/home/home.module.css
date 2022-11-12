@@ -1,0 +1,7 @@
+.homeContainer{
+    background-image: url('https://free4kwallpapers.com/uploads/wallpaper/background-photos-pictures-web-photo-blue-turnip-1920x1080-wallpaper.jpg');
+    width: 100%;  
+    min-height: 100vh;
+    background-attachment: fixed;
+    /* background-repeat: no-repeat; */
+}

@@ -1,0 +1,7 @@
+.productContainer{
+    background-image: url('https://static.vecteezy.com/system/resources/previews/006/852/804/original/abstract-blue-background-simple-design-for-your-website-free-vector.jpg');
+    width: 100%;  
+    min-height: 100vh;
+    background-attachment: fixed;
+    /* background-repeat: no-repeat;    */
+}
