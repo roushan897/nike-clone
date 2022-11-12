@@ -1,0 +1,7 @@
+.wishlistContainer{
+    background-image: url('../../assets/wishlist.jpg');
+    width: 100%;  
+    min-height: 100vh;
+    background-attachment: fixed;
+    /* background-repeat: no-repeat; */
+}

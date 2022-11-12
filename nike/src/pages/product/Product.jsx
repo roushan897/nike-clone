@@ -1,5 +1,6 @@
 import React, { useContext, useState } from "react";
 import styles from './product.module.css';
+import loadingImg from '../../assets/loading.gif';
 import { Navbar } from "../../components/navbar/Navbar";
 import { Footer } from "../../components/Footer";
 import { ProductTable } from "../../components/ProductTable";
@@ -33,7 +34,7 @@ export const Product = () => {
     getData();
   },[id])
     
-  return loading? <div>loading...</div> : (
+  return loading? <div className={styles.load}><img src={loadingImg} alt="loading" /></div> : (
     <>
     <Box color='#fff' className={styles.productContainer}>
         <Navbar/>
@@ -94,7 +95,7 @@ export const Product = () => {
       </Box>
 
       <Box>
-        <Footer />
+        <Footer /> 
       </Box>    
     </Box>
     </>

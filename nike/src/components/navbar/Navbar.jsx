@@ -41,7 +41,7 @@ export const Navbar = () => {
         {/* <Box><HiOutlineSearch/></Box> */}
         <Cart />
         <Button
-          onClick={() => navigate("/")}
+          onClick={() => navigate("/wishlist")}
           fontSize="30"
           colorScheme="transparent"
         >

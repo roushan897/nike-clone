@@ -6,6 +6,7 @@ import { Checkout } from "../pages/checkout/Checkout";
 import { Home } from "../pages/home/Home";
 import { PaymentSucces } from "../pages/paymentSuccess/PaymentSucces";
 import { Product } from "../pages/product/Product";
+import { Wishlist } from "../pages/wishlist/Wishlist";
 
 export const AllRoutes = () => {
   return (
@@ -20,6 +21,7 @@ export const AllRoutes = () => {
             </Procted>
           }
         />
+        <Route path='/wishlist' element={<Wishlist/>} />
         <Route path="/product/:id" element={<Product />} />
         <Route path="/paymentsuccess" element={<PaymentSucces />} />
         <Route path="*" element={<Home />} />
