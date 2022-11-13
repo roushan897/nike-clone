@@ -1,16 +1,18 @@
 import React, { useContext } from 'react'
 import { useNavigate } from 'react-router-dom';
 import { Box, Button, Flex, Image, Tag, Text } from '@chakra-ui/react'
+
 import { HiOutlineShoppingBag } from 'react-icons/hi';
 import { AiOutlineHeart, AiFillStar } from 'react-icons/ai';
+import { ImBin } from 'react-icons/im';
 import { CartContextProvider } from '../context/Cart';
 import { WishlistContextProvider } from '../context/Wishlist';
 
-export const Cards = ({hello, el}) => {
+export const Cards = ({hello, el, reCart}) => {
   const navigate = useNavigate();
   const { addCart, removeCart } = useContext(CartContextProvider);
-  const { addWish } = useContext(WishlistContextProvider);
- 
+  const { addWish, removeWish } = useContext(WishlistContextProvider);
+
   return (
     <Flex
           direction={hello ? 'row': 'column'}
@@ -39,9 +41,13 @@ export const Cards = ({hello, el}) => {
               <Button onClick={()=>addCart(el)} variant={'#000'} fontSize='lg' bgColor={'#000'} color={"#fff"} size="sm">
                 <HiOutlineShoppingBag/>
               </Button>
-              <Button onClick={()=>addWish(el)} variant={'#000'} fontSize='lg' bgColor={'#000'} color={"#fff"} size="sm">
+              { reCart==='yes'? <Button onClick={()=>removeWish(el._id)} variant={'#000'} fontSize='lg' bgColor={'#000'} color={"#fff"} size="sm">
+               <ImBin/>
+              </Button>
+              : <Button onClick={()=>addWish(el)} variant={'#000'} fontSize='lg' bgColor={'#000'} color={"#fff"} size="sm">
                 <AiOutlineHeart/>
               </Button>
+              }
             </Flex>
           </Box>
 

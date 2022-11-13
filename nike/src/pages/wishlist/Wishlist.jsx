@@ -5,20 +5,17 @@ import { Navbar } from "../../components/navbar/Navbar";
 import { Footer } from "../../components/Footer";
 import { WishlistContextProvider } from "../../context/Wishlist";
 import { useContext } from "react";
+import { ProductTable } from "../../components/ProductTable";
 
 export const Wishlist = () => {
-  const { wishlist, removeWish } = useContext(WishlistContextProvider);
-
-  console.log(wishlist)
+  const { wishlist } = useContext(WishlistContextProvider);
 
   return (
     <Box className={styles.wishlistContainer}>
       <Navbar />
-
       <Box minH='500px'>
-        <Text color='#fff'>Comming soon...</Text>
+        <ProductTable {...{hello: '', shoesData: wishlist, reCart: "yes"}} />
       </Box>
-
       <Box>
         <Footer />
       </Box>

@@ -14,7 +14,7 @@ import axios from "axios";
 import { useEffect } from "react";
 import { Skelton } from "./Skelton";
 
-export const ProductTable = ({hello, limit}) => {
+export const ProductTable = ({hello, limit, shoesData, reCart}) => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -26,7 +26,7 @@ export const ProductTable = ({hello, limit}) => {
       setLoading(false);
     })
   }
-
+  
   useEffect(()=>{
     getData();
   },[]);
@@ -39,9 +39,13 @@ export const ProductTable = ({hello, limit}) => {
       columns={hello? [1, 2, 3] : [1, 2, 3, 4]}      
       gap="7"      
     >
-      {loading? Array(4).fill(0).map((el,i)=> <Skelton key={i} />)  : data?.map((el,i) => (
+      {loading? Array(4).fill(0).map((el,i)=> <Skelton key={i} />)  
+       : shoesData !== undefined ? shoesData.map((el,i) => (
+            <Cards key={el._id} {...{el: el, hello: hello, reCart: reCart}} />        
+         ))
+       : data?.map((el,i) => (
         <Cards key={el._id} {...{el: el, hello: hello}} />        
-      ))}
+       ))}
     </SimpleGrid>
   );
 };
